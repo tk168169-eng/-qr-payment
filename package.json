@@ -1,0 +1,43 @@
+{
+  "name": "@tk168169-eng/qr-payment",
+  "version": "1.0.0",
+  "description": "Thai PromptPay / Omise QR payment React component and hook",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --external react --external react-dom",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --external react --external react-dom --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tk168169-eng/-qr-payment.git"
+  },
+  "peerDependencies": {
+    "html2canvas": ">=1",
+    "lucide-react": ">=0.300.0",
+    "promptpay-qr": ">=0.5.0",
+    "qrcode.react": ">=3",
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.28",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
